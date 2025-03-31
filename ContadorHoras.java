@@ -24,15 +24,21 @@ public class ContadorHoras {
             minuto += integer;
         }
 
-        if(minuto > 60){
-            hora = (int) minuto/60;
-            minuto = minuto - (hora *60);
-        }
+        hora += minuto/60;
+        minuto = minuto%60;
 
-        if(minuto < 0){
-            int aux = minuto/60;
-            hora = (int) aux;
-            minuto = minuto - (aux*60);
+        // if(minuto > 60){
+        //     hora = (int) minuto/60;
+        //     minuto = minuto - (hora *60);
+        // } else if (minuto < 0){
+        //     int aux = minuto/60;
+        //     hora = (int) aux;
+        //     minuto = minuto - (aux*60);
+        // }
+
+        if (minuto < 0) {
+            hora--;
+            minuto += 60;
         }
 
         for (Integer integer : horas) {
