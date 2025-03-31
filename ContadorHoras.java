@@ -29,6 +29,12 @@ public class ContadorHoras {
             minuto = minuto - (hora *60);
         }
 
+        if(minuto < 0){
+            int aux = minuto/60;
+            hora = (int) aux;
+            minuto = minuto - (aux*60);
+        }
+
         for (Integer integer : horas) {
             hora += integer;
         }
